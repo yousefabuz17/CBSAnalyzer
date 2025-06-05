@@ -1,7 +1,8 @@
-from cbs_utils.core_handlers import CBSMainCore
-from cbs_utils.core_analyzers import CBSMainAnalyzer
-from cbs_utils.core_exporter import CoreExtensions, CBSMainExporter
-from cbs_utils.type_hints import DataFrame, DataFrameLike, PathLike
+from .cbs_utils.core_handlers import CBSMainCore
+from .cbs_utils.core_analyzers import CBSMainAnalyzer
+from .cbs_utils.core_exporter import CoreExtensions, CBSMainExporter
+from .cbs_utils.type_hints import DataFrame, DataFrameLike, PathLike
+
 
 
 class CBSExporter(CBSMainExporter):
@@ -129,14 +130,3 @@ __all__ = (
     "CBSExporter",
     "CBSDataFrame",
 )
-
-
-main = "/Users/yousefabuzahrieh/Library/CloudStorage/GoogleDrive-yousef.abuzahrieh@gmail.com/My Drive/Other/ChaseBankStatements/"
-b = "/Users/yousefabuzahrieh/Library/CloudStorage/GoogleDrive-yousef.abuzahrieh@gmail.com/My Drive/Other/ChaseBankStatements/2025/20250128-statements-4079-.pdf"
-cbs_file2 = CBSAnalyzer(main)
-tra = cbs_file2.all_checking_summaries
-print(tra)
-# print(tra.export(".json"))
-# print(tra.export())
-# print(CBSDataFrame(tra).export())
-# print(cbs_file2.checking_summary)

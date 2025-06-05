@@ -12,6 +12,11 @@ from .cbs_utils.exceptions import (
     ExporterException,
     FileException,
 )
+from .cbs_utils.utils import check_pyversion
+from .cbs_analyzer import CBSAnalyzer, CBSExporter, CBSDataFrame
+
+
+check_pyversion()
 
 
 __all__ = (
@@ -28,4 +33,7 @@ __all__ = (
     "CBSException",
     "ExporterException",
     "FileException",
+    "CBSDataFrame",
+    "CBSAnalyzer",
+    "CBSExporter",
 )
