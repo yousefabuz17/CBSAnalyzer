@@ -9,6 +9,7 @@ from functools import (
     cached_property,
     partial
 )
+from importlib.resources import files
 from pathlib import Path
 from typing import (
     Callable,
@@ -47,8 +48,8 @@ from .wrappers import (
 
 # region FileHandler
 class FileHandler:
-    UTILS_DIR: Path = Path(__file__).absolute().resolve()
-    FILE_HANDLER_SH: Path = (UTILS_DIR.parent / "file_handler.sh").absolute()
+    UTILS_DIR: Path = Path(files("cbs_analyzer.cbs_utils"))
+    FILE_HANDLER_SH: Path = Path(files("cbs_analyzer.cbs_utils").joinpath("file_handler.sh"))
     
     _PIPE: int = subprocess.PIPE
     _SEPERATOR: str = "^^"
